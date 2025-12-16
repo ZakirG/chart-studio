@@ -1,0 +1,92 @@
+Leap: Hiring Project #3
+
+Hiring Partner Project Brief
+
+Project Title
+AI-First CRM Reporting & Dashboard Platform
+Project Category
+Category A: AI-First DevelopmentBuild a flexible, modern reporting platform using AI-assisted development practices. Focus on building beautiful dashboards and extensible, intuitive data exploration functionality, leveraging existing SQL queries and schema metadata provided.
+--------------------
+Problem Statement
+Our CRM platform is used daily by contractors to manage leads, jobs, appointments, documents, payments, commissions, and more. While we have a large library of legacy reports, they are difficult to extend, poorly presented, and lack the flexibility modern operators expect.
+We need a modern reporting experience for our CRM product, leveraging our existing MySQL database and SQL logic. This new reporting UI should provide insight into operational performance, sales, payments, scheduling, and employee activity in a way that is clear, customizable, and delightful.
+--------------------
+Business Context & Impact
+This will replace our outdated in-app reporting module, creating a foundation for analytics that internal users and our customers can trust and build on.
+Key Goals:
+• Avoid requiring deep knowledge of our data model (600+ tables)
+• Provide attractive, flexible dashboards out of the box
+• Use existing SQL definitions provided by our dev team
+• Minimize time spent reverse engineering or cleaning data
+Business Impact:
+• Faster insight delivery to customers and internal stakeholders
+• Easier access to standard KPIs and operational data
+• Platform extensibility for future custom reporting needs
+--------------------
+Technical Requirements
+Frontend
+• React + TypeScript (Tailwind optional)
+• Authenticated login screen (mock or Firebase ok)
+• Dashboard UX with:• Dashboard picker (prebuilt categories)• Create/Edit dashboard• Add/remove/edit cards (table/chart)• Drag-and-drop layout support
+Backend
+• Node.js with Express (or similar)
+• REST or GraphQL API to:• Fetch saved dashboards/cards• Serve table metadata• Execute queries (from saved SQL or visual config)
+• Use existing SQL as source of truth
+Database
+• Provided MySQL database (~600 tables)
+• Existing source code for reports will be shared
+• Emphasis is on presentation and flexibility, not schema discovery
+Charting & Visualization
+• Use a modern, well-supported charting library (Recharts, Nivo, etc.)
+• Visualization types:• Line• Bar• Pie• Table• Map (optional)
+--------------------
+Report Categories to Include (Initial Scope)
+• Sales Performance Report – KPIs by rep/team/time
+• Company Performance Report – Multi-office or branch rollups
+• Referral Source Report – Lead source analysis
+• Document Status Report – Contracts and document flow
+• Accounts Receivable Report – Outstanding balances
+• Commission Report – Rep earnings and payout logic
+• Master List Report – Exportable, filterable job/customer index
+• Sales Tax Report – Tax by jurisdiction
+• Work Order Report – Job status tracking
+• Invoice Report – Issued invoices, overdue, paid
+• Payments Report – Transaction activity
+• Clock In & Out Report – Field team hours
+• Appointments Report – Booking activity and conversion
+• Job Schedules Report – Crew utilization and timelines
+• User Activity Report – Audit log and app usage
+• Data Builder – Self-service query builder
+--------------------
+Data Explorer (Advanced Users)
+• SQL editor with syntax highlighting + autocomplete
+• Query execution window + results table
+• Schema/table browser
+• CSV/JSON export
+• Query timeout + row limits
+• Uses existing SQL as query base
+--------------------
+Project Context & Environment
+• ✅ Greenfield Project
+• ✅ MySQL database + legacy report SQL will be provided
+• ✅ No need to reverse engineer schema — focus is on UI/UX
+• ⛔ No Azure or GCP-specific dependencies — AWS preferred
+--------------------
+Success Criteria
+• Working web app that connects to MySQL DB and renders dashboards
+• Users can create, customize, and save dashboards
+• Includes data explorer for power users
+• Reuses existing SQL where possible
+• High-quality UI/UX, intuitive for both admins and customers
+• GitHub repo with README and demo video/walkthrough
+--------------------
+Candidate Support
+• Technical stakeholder: Bill Parker (CTO, Leap)
+• Modern dev stacks preferred; avoid legacy tools or niche libraries
+• Please document any AI tools used and how they accelerated your work
+--------------------
+Submission Requirements
+• GitHub repo with code
+• 1–2 page technical write-up
+• Demo video or walkthrough
+• Overview of how AI tools assisted (prompts, tools, workflows)

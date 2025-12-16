@@ -1,0 +1,137 @@
+query GetDashboards {
+  dashboards {
+    id
+    name
+    description
+    category
+    lastModified
+    createdAt
+    cards {
+      id
+      chartSpec
+    }
+  }
+}
+
+query GetDashboard($id: ID!) {
+  dashboard(id: $id) {
+    id
+    name
+    description
+    category
+    lastModified
+    createdAt
+    layout
+    cards {
+      id
+      chartSpec
+    }
+  }
+}
+
+mutation CreateDashboard($input: CreateDashboardInput!) {
+  createDashboard(input: $input) {
+    id
+    name
+    description
+    category
+    lastModified
+    createdAt
+  }
+}
+
+mutation UpdateDashboard($id: ID!, $input: UpdateDashboardInput!) {
+  updateDashboard(id: $id, input: $input) {
+    id
+    name
+    description
+    category
+    lastModified
+    createdAt
+  }
+}
+
+mutation DuplicateDashboard($id: ID!) {
+  duplicateDashboard(id: $id) {
+    id
+    name
+    description
+    category
+    lastModified
+    createdAt
+  }
+}
+
+mutation DeleteDashboard($id: ID!) {
+  deleteDashboard(id: $id)
+}
+
+mutation UpdateDashboardLayout($id: ID!, $layout: JSON!) {
+  updateDashboardLayout(id: $id, layout: $layout) {
+    id
+    name
+    description
+    category
+    lastModified
+    createdAt
+    layout
+    cards {
+      id
+      chartSpec
+    }
+  }
+}
+
+query ExecuteChart($spec: JSON!) {
+  executeChart(spec: $spec) {
+    rows
+    meta {
+      rowCount
+      durationMs
+    }
+  }
+}
+
+query GetSchemaMetadata {
+  getSchemaMetadata {
+    tables {
+      name
+      type
+      columns {
+        name
+        type
+        nullable
+        isPrimaryKey
+        isForeignKey
+        referencedTable
+        referencedColumn
+      }
+    }
+  }
+}
+
+mutation ExecuteSql($sql: String!) {
+  executeSql(sql: $sql) {
+    runId
+    columns
+    rows
+    rowCount
+    executionTimeMs
+    status
+  }
+}
+
+mutation CancelQuery($runId: ID!) {
+  cancelQuery(runId: $runId)
+}
+
+mutation UpsertCard($dashboardId: ID!, $cardId: ID, $chartSpec: JSON!) {
+  upsertCard(dashboardId: $dashboardId, cardId: $cardId, chartSpec: $chartSpec) {
+    id
+    chartSpec
+  }
+}
+
+mutation DeleteCard($dashboardId: ID!, $cardId: ID!) {
+  deleteCard(dashboardId: $dashboardId, cardId: $cardId)
+}
